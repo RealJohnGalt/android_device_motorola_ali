@@ -17,10 +17,10 @@
 
 set -e
 
-export DEVICE=montana
+export DEVICE=ali
 export DEVICE_COMMON=msm8953-common
 export VENDOR=motorola
 
-export DEVICE_BRINGUP_YEAR=2018
+export DEVICE_BRINGUP_YEAR=2019
 
 ./../../$VENDOR/$DEVICE_COMMON/setup-makefiles.sh $@

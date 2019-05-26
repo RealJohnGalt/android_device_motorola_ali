@@ -1,5 +1,5 @@
 #
-# system.prop for montana
+# system.prop for ali
 #
 
 # Camera
@@ -37,4 +37,4 @@ ro.config.hw_volte_on=true
 rild.libargs=-d /dev/smd0
 
 # Sensors
-ro.hardware.sensors=montana
+ro.hardware.sensors=ali

@@ -24,10 +24,7 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-
-on post-fs
-    symlink /dev/block/bootdevice/by-name/oem_b /dev/block/bootdevice/by-name/vendor_b
-    symlink /dev/block/bootdevice/by-name/oem_a /dev/block/bootdevice/by-name/vendor_a
+import /vendor/etc/init/hw/init.${ro.boot.hardware.sku}.rc
 
 on init
     setprop ro.vendor.hw.dualsim ${ro.boot.dualsim}
@@ -42,3 +39,4 @@ on property:ro.vendor.hw.dualsim=true
 
 on property:ro.vendor.hw.dualsim=false
     setprop persist.radio.multisim.config ""
+

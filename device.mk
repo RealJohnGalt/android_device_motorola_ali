@@ -15,7 +15,7 @@
 #
 
 # Vendor blobs
-$(call inherit-product-if-exists, vendor/motorola/payton/payton-vendor.mk)
+$(call inherit-product-if-exists, vendor/motorola/ali/ali-vendor.mk)
 
 # Properties
 -include $(LOCAL_PATH)/vendor_prop.mk
@@ -49,18 +49,59 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/idc/uinput-fpc.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/uinput-fpc.idc
 
 # Gatekeeper HAL
+#android.hardware.gatekeeper@1.0-service
 PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0-impl \
-    android.hardware.gatekeeper@1.0-service
+    android.hardware.gatekeeper@1.0-impl
 
 # Init
 PRODUCT_PACKAGES += \
-    init.payton.rc
+    init.ali.rc \
+    fstab.qcom \
+    loggy.sh \
+    init.mmi.chipset.rc \
+    init.mmi.diag.rc \
+    init.mmi.rc \
+    init.mmi.tcmd.rc \
+    init.mmi.nonab.rc \
+    init.target.rc \
+    init.mmi.usb.rc \
+    init.mmi.usb.sh \
+    init.qcom.early_boot.sh \
+    init.qcom.post_boot.sh \
+    init.qcom.rc \
+    init.qcom.sensors.sh \
+    init.qcom.sh \
+    init.qti.qseecomd.sh \
+    init.gbmods.sh \
+    move_time_data.sh \
+    ueventd.qcom.rc \
+
+
+# Camera
+PRODUCT_COPY_FILES += \
+    device/motorola/ali/camera/mot_ov12a10_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/mot_ov12a10_chromatix.xml \
+    device/motorola/ali/camera/mot_ov5675_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/mot_ov5675_chromatix.xml \
+    device/motorola/ali/camera/mot_s5k3p8sp_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/mot_s5k3p8sp_chromatix.xml \
+    device/motorola/ali/camera/s5k4h7_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/5k4h7_chromatix.xml \
+    device/motorola/ali/camera/sdm450_mot_ali_camera.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/sdm450_mot_ali_camera.xml
+
+
+# extra ali
+PRODUCT_PACKAGES += \
+    android.hardware.wifi@1.0 \
+    android.hardware.wifi@1.1 \
+    android.hardware.wifi@1.2 \
+    android.hardware.wifi@1.0-service \
+    android.hardware.radio@1.0 \
+    android.hardware.radio@1.1 \
+    android.hardware.radio.deprecated@1.0 \
+    android.hardware.secure_element@1.0 \
+    android.hardware.usb@1.0
 
 # Keymaster HAL
+    #android.hardware.keymaster@3.0-service
 PRODUCT_PACKAGES += \
-    android.hardware.keymaster@3.0-impl \
-    android.hardware.keymaster@3.0-service
+    android.hardware.keymaster@3.0-impl
 
 # NFC
 PRODUCT_PACKAGES += \
@@ -83,7 +124,7 @@ PRODUCT_COPY_FILES += \
 
 # Recovery
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/recovery/root/init.recovery.payton.rc:root/init.recovery.payton.rc
+    $(LOCAL_PATH)/recovery/root/init.recovery.ali.rc:root/init.recovery.ali.rc
 
 # Sensors
 PRODUCT_COPY_FILES += \
@@ -95,5 +136,5 @@ PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/platform/soc/c0c4000.sdhci/by-name
 PRODUCT_VENDOR_VERITY_PARTITION := /dev/block/platform/soc/c0c4000.sdhci/by-name/oem
 $(call inherit-product, build/target/product/verity.mk)
 
-# Inherit from motorola sdm660-common
-$(call inherit-product, device/motorola/sdm660-common/common.mk)
+# Inherit from motorola sdm450-common
+$(call inherit-product, device/motorola/sdm450-common/common.mk)

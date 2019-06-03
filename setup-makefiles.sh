@@ -17,8 +17,8 @@
 
 set -e
 
-export DEVICE=payton
-export DEVICE_COMMON=sdm660-common
+export DEVICE=ali
+export DEVICE_COMMON=sdm450-common
 export VENDOR=motorola
 
 export DEVICE_BRINGUP_YEAR=2018

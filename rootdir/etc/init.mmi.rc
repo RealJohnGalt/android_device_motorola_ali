@@ -290,6 +290,12 @@ service vendor.apanic_copy /vendor/bin/apanic_copy.sh
     oneshot
     disabled
 
+service vendor.init_wifi /vendor/bin/wlan_carrier_bin.sh
+    class main
+    user root
+    group root
+    oneshot
+
 on charger
     trigger early-fs
     trigger fs
@@ -467,9 +473,9 @@ service vendor.sensors-hal-1-0 /vendor/bin/hw/android.hardware.sensors@1.0-servi
     rlimit rtprio 10 10
 
 #Override fwpath string when wpa_supplicant server was killed
-on property:vendor.wifi.station=true
-    write /sys/module/wlan/parameters/sar_sta enabled
+#on property:vendor.wifi.station=true
+#    write /sys/module/wlan/parameters/sar_sta enabled
 
-on property:vendor.wifi.station=false
-    write /sys/module/wlan/parameters/sar_sta disabled
+#on property:vendor.wifi.station=false
+#    write /sys/module/wlan/parameters/sar_sta disabled
 

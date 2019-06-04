@@ -58,6 +58,7 @@ PRODUCT_PACKAGES += \
     init.ali.rc \
     fstab.qcom \
     loggy.sh \
+    wlan_carrier_bin.sh \
     init.mmi.chipset.rc \
     init.mmi.diag.rc \
     init.mmi.rc \
@@ -88,6 +89,7 @@ PRODUCT_COPY_FILES += \
 
 # extra ali
 PRODUCT_PACKAGES += \
+    wifi_symlinks \
     android.hardware.wifi@1.0 \
     android.hardware.wifi@1.1 \
     android.hardware.wifi@1.2 \

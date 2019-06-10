@@ -94,6 +94,8 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi@1.1 \
     android.hardware.wifi@1.2 \
     android.hardware.wifi@1.0-service \
+    android.hardware.wifi.supplicant@1.0 \
+    android.hardware.wifi.supplicant@1.1 \
     android.hardware.radio.config@1.0 \
     android.hardware.radio@1.0 \
     android.hardware.radio@1.1 \

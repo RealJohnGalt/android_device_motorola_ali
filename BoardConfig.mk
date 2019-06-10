@@ -45,14 +45,8 @@ BOARD_VENDORIMAGE_PARTITION_SIZE := 671088640     #   655360 * 1024 mmcblk0p50
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_COPY_OUT_VENDOR := vendor
 
-# Power
-TARGET_HAS_NO_WLAN_STATS := true
-
 # Treble
 PRODUCT_SHIPPING_API_LEVEL := 27
-
-# Wifi
-WIFI_DRIVER_OPERSTATE_PATH := "/sys/class/net/wlan0/operstate"
 
 # inherit from the proprietary version
 # -include vendor/motorola/ali/BoardConfigVendor.mk

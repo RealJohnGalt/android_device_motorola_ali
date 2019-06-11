@@ -254,6 +254,9 @@ on boot
    chmod 0660 /sys/class/leds/vibrator/duration
    chown root mot_mod /sys/bus/i2c/devices/2-005a/reduce
 
+   # Wifi firmware reload path
+   chown wifi wifi /sys/module/wlan/parameters/fwpath
+
    # Change ownership of aov related sysfs entries
    chown audio audio /sys/kernel/aov/trigger
    chown audio audio /sys/kernel/aov/register
@@ -473,9 +476,16 @@ service vendor.sensors-hal-1-0 /vendor/bin/hw/android.hardware.sensors@1.0-servi
     rlimit rtprio 10 10
 
 #Override fwpath string when wpa_supplicant server was killed
-#on property:vendor.wifi.station=true
-#    write /sys/module/wlan/parameters/sar_sta enabled
+#on property:init.svc.wpa_supplicant=running
+#    write /sys/module/wlan/parameters/fwpath sta
 
-#on property:vendor.wifi.station=false
-#    write /sys/module/wlan/parameters/sar_sta disabled
+#on property:init.svc.wpa_supplicant=stopped
+#    write /sys/module/wlan/parameters/fwpath wpadown
+
+on property:vendor.wifi.station=true
+    write /sys/module/wlan/parameters/sar_sta enabled
+
+on property:vendor.wifi.station=false
+    write /sys/module/wlan/parameters/sar_sta disabled
+
 

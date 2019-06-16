@@ -75,10 +75,10 @@ PRODUCT_COPY_FILES += \
 #    android.hardware.gatekeeper@1.0-impl
 
 # Init
+#loggy.sh for debugging
 PRODUCT_PACKAGES += \
     init.ali.rc \
     fstab.qcom \
-    loggy.sh \
     wlan_carrier_bin.sh \
     init.mmi.chipset.rc \
     init.mmi.diag.rc \
@@ -93,6 +93,9 @@ PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.qcom.sensors.sh \
     init.qcom.sh \
+    init.class_late.sh \
+    init.class_main.sh \
+    init.mdm.sh \
     init.qti.qseecomd.sh \
     init.gbmods.sh \
     move_time_data.sh \

@@ -427,10 +427,10 @@ on post-fs-data
     #Start move time data to /data/vendor once post-fs-data done
     start vendor.move_time_data
 
-service loggy /system/bin/sh /vendor/etc/init/hw/loggy.sh
-    class main
-    user root
-    oneshot
+#service loggy /system/bin/sh /vendor/etc/init/hw/loggy.sh
+#    class main
+#    user root
+#    oneshot
 
 service nqnfcinfo /system/vendor/bin/nqnfcinfo
     class late_start

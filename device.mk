@@ -79,6 +79,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     init.ali.rc \
     fstab.qcom \
+    loggy.sh \
+    init.mmi.overlay.rc \
     wlan_carrier_bin.sh \
     init.mmi.chipset.rc \
     init.mmi.diag.rc \

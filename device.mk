@@ -117,6 +117,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     wifi_symlinks \
     android.hardware.wifi@1.0 \
+    android.hardware.wifi.hostapd@1.0 \
     android.hardware.wifi@1.1 \
     android.hardware.wifi@1.2 \
     android.hardware.wifi@1.0-service \

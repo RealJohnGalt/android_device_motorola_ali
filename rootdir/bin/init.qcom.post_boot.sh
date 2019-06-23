@@ -106,8 +106,9 @@ function 8953_sched_dcvs_hmp()
     echo 40000 > /sys/devices/system/cpu/cpufreq/interactive/sampling_down_factor
     echo 19 > /proc/sys/kernel/sched_upmigrate_min_nice
     # Enable sched guided freq control
-    echo 1 > /sys/devices/system/cpu/cpufreq/interactive/use_sched_load
+    #echo 1 > /sys/devices/system/cpu/cpufreq/interactive/use_sched_load
     echo 1 > /sys/devices/system/cpu/cpufreq/interactive/use_migration_notif
+    echo 1 > /sys/devices/system/cpu/cpufreq/interactive/fast_ramp_down
     echo 200000 > /proc/sys/kernel/sched_freq_inc_notify
     echo 200000 > /proc/sys/kernel/sched_freq_dec_notify
 
